@@ -1,0 +1,51 @@
+<template class="au-date-picker" tabindex="0" focusin.delegate="open()">
+  <input type="text" value.bind="value | asDate" />
+  <div class="au-date-picker-calendar" if.bind="state === 1">
+    <div class="au-date-picker-header">
+      <button click.delegate="setMonth(currentMonth - 1)"><</button>
+      <span class="au-date-picker-header-current-year-month">${getMonth(currentMonth)} ${currentYear}</span>
+      <button click.delegate="setMonth(currentMonth + 1)">></button>
+    </div>
+    <div class="au-date-picker-dates">
+      <div class="au-date-picker-weekday" repeat.for="weekday of 7">${getWeekday(weekday)}</div>
+      <div class="au-date-picker-day" repeat.for="day of weeksInMonth(currentYear, currentMonth) * 7">${getDate(currentYear, currentMonth, day)}</div>
+    </div>
+  </div>
+  <style>
+    .au-date-picker {
+      display: inline-block;
+    }
+    .au-date-picker-calendar {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid currentColor;
+      padding: 0.5rem;
+    }
+    .au-date-picker-header {
+      display: flex;
+    }
+    .au-date-picker-header-current-year-month {
+      margin: auto;
+    }
+    .au-date-picker-dates {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+    .au-date-picker-weekday {
+      font-size: 0.8rem;
+    }
+    .au-date-picker-day,
+    .au-date-picker-weekday {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 1rem;
+      width: 1rem;
+      padding: 0.5rem;
+      border-radius: 50%;
+    }
+    .au-date-picker-day:hover {
+      background: grey;
+    }
+  </style>
+</template>

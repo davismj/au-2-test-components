@@ -1,0 +1,36 @@
+{
+  "name": "my-app",
+  "description": "An Aurelia 2 client application.",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "???"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@aurelia/kernel": "dev",
+    "@aurelia/runtime": "dev",
+    "@aurelia/runtime-html": "dev",
+    "@aurelia/runtime-html-browser": "dev",
+    "@aurelia/jit": "dev",
+    "@aurelia/jit-html": "dev",
+    "@aurelia/jit-html-browser": "dev",
+    "@aurelia/router": "dev"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.3",
+    "css-loader": "^3.2.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.0.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "rimraf dist && webpack --env production"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "target": "ES2017"
+  },
+  "include": [
+    "src"
+  ]
+}
